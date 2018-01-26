@@ -1,27 +1,27 @@
-![luuman-ipad-iphone](https://hexo.io/build/screenshots/spfk-025d1cd820.png)
+![screenshot-spfk_x](./screenshot-spfk_x.png)
 
-　　** SPFK Hexo 主题：**用了yilia主题一段时间，感觉还有很多可以提高的地方，就查阅资料，对其进行粗类的修改，但是，有其实还有很多不完善的地方，欢迎大家前捧场。
-没想到，这么多人喜欢黑色版本的，建议不是每个人都喜欢我的这些功能，所以准备个基础版本，插件可以看教程自行安装。
+本主题主要基于「[SPFK Hexo 主题](https://github.com/luuman/hexo-theme-spfk)」修改，主要修改如下：
 
+1. 参考「[black-blue主题](https://github.com/maochunguang/black-blue)」修改css配色，将其页面颜色改成以黑色和蓝色为主；
+2. 添加本地搜索，主要参考 [让 Hexo 博客支持本地站内搜索](http://moxfive.xyz/2016/05/31/hexo-local-search/) ；
+3. 添加Gitalk评论系统；
+4. 交换内容栏与菜单栏位置，使菜单栏位于右侧；
+5. 添加文章目录折叠功能，完全参考 [为 Hexo 添加可折叠的文章目录](http://moxfive.xyz/2016/06/13/hexo-collapsible-toc/) ；
+6. 改善部分代码，添加一些小玩具。
 
-注意：使用本主题请仔细查看[Hexo 主题：SPFK](http://luuman.github.io/categories/Hexo/)，
+更多细节可查看 [Hexo的SPFK主题修改小记](https://cniter.github.io/posts/b1e9411b.html)（ https://cniter.github.io/tags/hexo/ ）。
 
-没有使用过Hexo的同学可以看看[GitHub Hexo搭建](http://luuman.github.io/categories/Hexo/)，另外还有一个我自己搭建时，插件的安装教程[Hexo插件安装](http://luuman.github.io/categories/Hexo/)
+*以上相关版权归原作者所有。*
 
+***
 
-正如前辈们所说，我们使用博客的目的是分享经验，总结自己，督促自己不断提升。如果你有不喜欢，不断的改进吧。只要你玩的开心！（请不要再这浪费太多精力，去丰富你的博客内容吧，骚年！）
+推荐安装插件：
 
-声明：由于博主一直使用，关于Blog仓库，需要设置_config.yml
-
-```
-## If your site is put in a subdirectory, set url as 'http://luuman.github.io/child' and root as '/child/'
-url: http://luuman.github.io/Blog
-root: /Blog/
-# url: http://luuman.github.io
-# root: /
-```
-
-## 作品展示
-关于作品展示页面，直接去看看[hexo仓库](https://github.com/luuman/Hexo)，将必要的页面放置进去即可，样式主题已经配置。里面只要配置些图片，链接即可！
+- hexo-generator-feed # RSS订阅
+- hexo-generator-searchdb # 本地搜索
+- hexo-abbrlink # 文章唯一永久链接
+- hexo-all-minifier # 快速压缩优化代码
 
 
+
+本人 2018-01-26 还在使用该主题。

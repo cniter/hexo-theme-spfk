@@ -9,7 +9,7 @@
             function() {
                 var offset = a.offset();
                 $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
+                    bottom: window.innerHeight - offset.top + 10,
                     left: offset.left + a.outerWidth()/2 + 1
                 }).fadeIn(function() {
                     var pop = $(this);

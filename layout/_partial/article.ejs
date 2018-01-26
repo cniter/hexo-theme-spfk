@@ -33,14 +33,14 @@
           <% } %>
         <%- post.content %>
       <% } %>
-      <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.toc)) && !index){ %>
+      <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
         <div class="page-reward">
           <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
           <div class="hide_box"></div>
           <div class="shang_box">
             <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
             <div class="shang_tit">
-              <p><%= theme.reward_wording1%></p>
+              <h2><%= theme.reward_wording1%></h2>
             </div>
             <div class="shang_payimg">
               <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
@@ -92,7 +92,7 @@
       <%- partial('post/tag') %>
       <% if (index && (post.description || post.excerpt)){ %>
         <p class="article-more-link">
-          <a <% if (!theme.excerpt_link){ %>class="hidden"<% } %> href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
+          <a <% if (!theme.excerpt_link){ %>class="hidden"<% } %> href="<%- url_for(post.path) %>"><%= theme.excerpt_link %> >></a>
         </p>
       <% } %>
       <div class="clearfix"></div>
@@ -120,10 +120,12 @@
       <%- partial('comments/duoshuo', {
           key: post.path,
           title: post.title,
-          url: config.url+url_for(post.path),
+          url: config.url+url_for(post.path)
           }) %>
     <% } else if (theme.youyan.on) { %>
         <%- partial('comments/youyan') %>
+    <% } else if (theme.gitalk.on) { %>
+        <%- partial('comments/gitalk') %>
     <% } else if (theme.gitment.on) { %>
         <%- partial('comments/gitment', {
             owner: theme.gitment.owner,
@@ -141,7 +143,7 @@
         <%- partial('comments/disqus', {
             shortname: config.disqus_shortname
           }) %>
-    <% } %>
+    <% } else {} %>
 <% } %>
 
 <%- partial('_partial/post-nav-button') %>

@@ -66,7 +66,7 @@ $line-numbers
       white-space: pre
     a
       border: dashed 1px #000
-      padding: 8px 8px
+      padding: 0px 8px
       border-radius: 5px
       background-color: #2F2E2E
       word-wrap: break-word
@@ -91,14 +91,15 @@ $line-numbers
     padding-bottom: 5px
     margin: .5em auto
     font-weight: 700
-    color: #999
+    color: #4094c3
     padding-bottom: 5px
     text-align: center
   h2::after,h2::before
     content: " —— "
+    color: #4094c3
   h3
     margin: 0.5em auto
-    color: #fff
+    color: #4094c3
     background: rgba(0, 0, 0, 0.27)
     border: 1px dashed #020202
     padding: 0.2em 0.6em
@@ -106,9 +107,10 @@ $line-numbers
     border-radius: 6px
   h3:hover
     content: " > "
+    color: #4094c3
   h4
     margin: 0.5em auto
-    color: #fff
+    color: #4094c3
     background: #5A5A5A
     border: 1px dashed #020202
     padding: 0.2em 0.6em
@@ -117,7 +119,7 @@ $line-numbers
     border-radius: 6px
   h5
     margin: 0.5em auto
-    color: #fff
+    color: #4094c3
     background: #8E8D8D
     border: 1px dashed #020202
     padding: 0.2em 0.6em
@@ -126,7 +128,7 @@ $line-numbers
     border-radius: 6px
   h6
     margin: 0.5em auto
-    color: #fff
+    color: #4094c3
     border: 1px dashed #020202
     padding: 0.2em 0.6em
     font-weight: normal
@@ -177,6 +179,7 @@ $line-numbers
     @extend $code-block
     border-radius: 4px
     padding: 0 10px
+    max-height: 50em
     pre
       border: none
       margin: 0

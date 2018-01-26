@@ -1,5 +1,7 @@
 @import "customise/inline-code"
 @import "post/gitment"
+@import "post/gitalk"
+
 .body-wrap{
   margin-bottom: 80px;
 }
@@ -96,7 +98,7 @@
 }
 
 .article-title {
-  color: #999;
+  color: #4094c3;
   margin-left: 0px;
   font-weight: initial;
   line-height: 35px;
@@ -273,7 +275,7 @@
   text-align: center;
   z-index: 1;
   time{
-    color: #aaa;
+    /* color: #aaa; */
     &:before{
       color: #999;
       content: "\f073";
@@ -315,7 +317,7 @@
     .article-nav-title{
       display: inline-block;
       font-size: 1rem;
-      color: #999;
+      color: #268fb8;
       transition: color 0.3s;
     }
     strong{
@@ -348,10 +350,10 @@
     border-radius: 6px;
     width: 71px;
     height: 29px;
-    left: 217px;
+    right: 217px;
     border: none;
     background-color: #ee6252;
-    top: 344px;
+    top: 354px;
     font-size: 14px;
     text-align: center;
     color: #fff;
@@ -363,8 +365,8 @@
 .toc-article {
     position: fixed;
     width: 256px;
-    left: 0;
-    top: 360px;
+    right: 0;
+    top: 370px;
     color: #999;
     bottom: 0.7em;
     padding: 10px;
@@ -380,7 +382,7 @@
 .post-list li{
       margin-left: 20px;
       a{
-        color: #999;
+        color: #4094c3;
       }
       a:hover{
         color: #FFF;
@@ -391,7 +393,7 @@
     font-size: .9em;
     line-height: 1.65em;
     a {
-        color: #999;
+        color: #4094c3;
         &:visited {
             color: #FFF;
         } 
@@ -408,7 +410,7 @@
     }
     .toc-title {
         font-weight: bold;
-        color: #999;
+        color: #4094c3;
         text-align: center;
         display: block;
     }
@@ -428,6 +430,33 @@
     }
     .toc-link:hover {
         background: rgba(158, 188, 226, .21);
+    }
+
+    ol.toc li.toc-item i {
+        display: inline-block;
+        margin-left: -0.9em;
+        width: 0.9em;
+        color: #b3b3b3;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          color: #000;
+        }
+
+        &.hide {
+          display: none;
+        }
+    }  
+    .toc-title.clickable {
+      cursor: pointer;
+
+      &:hover {
+        color: #88acdb;
+      }
+      &:active {
+        color: #d3d3d3;
+      }
     }
 }
 

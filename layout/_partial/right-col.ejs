@@ -1,4 +1,4 @@
-<div class="overlay"></div>
+<!-- <div class="overlay"></div> -->
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="<%- config.root %>" class="profilepic">
@@ -16,10 +16,17 @@
         <% if (theme.subtitle){ %>
         <p class="header-subtitle"><%=theme.subtitle%></p>
         <%}%>
-        <% if (theme.search_box){ %>
-            <form>
+        <% if (theme.search.on){ %>
+            <!-- <form>
                 <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form> -->
+
+            <form id="search-form"> <!-- 搜索框相关 -->
+                <input type="text" id="local-search-input" name="q" results="0" placeholder=" Search..." class="search form-control" autocomplete="off" autocorrect="off"/>
+                <i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
             </form>
+            <div id="local-search-result"></div> <!-- 搜索结果区 -->
+            <p class='no-result'>No results found </p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
         <%}%>
         <%if(theme.tagcloud){%>
             <div id="switch-btn" class="switch-btn">
@@ -44,6 +51,9 @@
                             <div class="shoulder"></div>
                         </div>
                         <%}%>
+                        <div class="icon-wrap icon-globe hide" data-idx="4">
+                            <i class="fa fa-globe fa-spin fa-2x" aria-hidden="true"></i>         
+                        </div>
                     </div>
                     
                 </div>
@@ -57,6 +67,9 @@
                         <%}%>
                         <%if(theme.aboutme){%>
                         <li>关于我</li>
+                        <%}%>
+                        <%if(theme.visual_visitor){%>
+                        <li>访问情况</li>
                         <%}%>
                     </ul>
                 </div>
@@ -106,7 +119,19 @@
                 <%}else{%>
                 <section class="switch-part switch-part4">
                 <%}%>
-                    <div id="js-aboutme"><%=theme.aboutme%></div>
+                    <div id="js-aboutme"><%-theme.aboutme%></div>
+                </section>
+                <%}%>
+
+                <%if(theme.visual_visitor){%>
+                <%if(!theme.aboutme && !theme.friends){%>
+                <section class="switch-part switch-part3">
+                <%}else if(theme.aboutme && theme.friends){%>
+                <section class="switch-part switch-part5">
+                <%}else{%>
+                <section class="switch-part switch-part4">
+                <%}%>
+                    <div><%-theme.visual_visitor%></div>
                 </section>
                 <%}%>
             </div>

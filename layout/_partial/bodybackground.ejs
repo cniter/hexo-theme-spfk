@@ -7,7 +7,7 @@
     <script>
         $(document).ready(function() {
             var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
+            if (iPad > -1 || $(".right-col").css("display") === "none") {
                 var bgColorList = ["#999"];
                 var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
@@ -24,7 +24,7 @@
         body {
           background: lightgray;
         }
-        #container .left-col {
+        #container .right-col {
           background: white;
         }
         .article-inner {

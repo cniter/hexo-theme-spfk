@@ -4,13 +4,14 @@
 ## About Page: `hexo new page about`
 ## Tags Cloud Page: `hexo new page tags`
 menu:
-  博客首页: /Home
-  作品展示: /works
-  留言打卡: /about
-  前端导航: /FrontEndGuide
-# 静心阅读: /tags
-# 光影之路: /instagram
-# 随笔: /tags/随笔
+  所有文章: /archives/
+  # 博客首页: /Home
+  # 作品展示: /works
+  # 留言打卡: /about
+  # 前端导航: /FrontEndGuide
+  # 静心阅读: /tags
+  # 光影之路: /instagram
+  # 随笔: /tags/随笔
 
 # Link to your avatar | 填写头像地址
 avatar: img/head.jpg
@@ -18,23 +19,29 @@ avatar: img/head.jpg
 # Small icon of Your site | 站点小图标地址
 favicon: img/favicon.png
 
-# Social info. Bar | 社交信息展示
+# set cursor | 设置鼠标指针图标
+cursor: 
+  on: true
+  cursor_0: img/cursor.ani  # 首选指针 来自：http://www.rw-designer.com/cursor-detail/100439
+  cursor_1: img/cursor.cur  # 备选指针 来自：http://www.rw-designer.com/cursor-detail/82454
+
+# Social info. Bar | 右侧栏社交信息展示
 ## Keep "mailto:" in Email | 设置 Email 时保留 "mailto:"
 ## Encrypt email 加密邮件地址 http://ctrlq.org/encode/
 ## RSS requires a plugin to take effect | 使用 RSS 需先安装对应插件
 ## https://github.com/hexojs/hexo-generator-feed
 subnav:
-  mail: "http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E"
-  github: "https://github.com/luuman"
-  zhihu: "#"
-  weibo: "#"
-  google: "#"
-  twitter: "#"
-  linkedin: "#"
+  mail: "http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=qNvAyd3G0d3JxujOx9DFycHEhsvHxQ"
+  github: "https://github.com/cniter"
+  # zhihu: "#"
+  # weibo: "#"
+  # google: "#"
+  # twitter: "#"
+  # linkedin: "#"
   # facebook: "#"
-  # rss: /atom.xml
+  rss: /atom.xml  # 需安装hexo-generator-feed插件
   # pinterest: "#"
-  # QQ: "#"
+  QQ: "http://sighttp.qq.com/authd?IDKEY=4faf682653b3b7f5f47b9cb6d2bb8b81de8fa7a8fb8cee12"
   # wechat: "#"
   # douban: "#"
   # pinboard: "#"
@@ -48,27 +55,38 @@ subnav:
 
 disqus: 
   # on: true
-  shortname: luuman
+  shortname: cniter
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
   # It is unnecessary to enable disqus here if 
   # you have set "disqus_shortname" in your site's "_config.yml" 
 
+# 多说评论系统已经关闭，强烈不推荐开启
 duoshuo: 
   # on: true
-  domain: luuman
+  domain: cniter
   # 是否开启多说评论，http://duoshuo.com/create-site/
   # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
   # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
 
-gitment:
+gitalk:
   on: true
-  owner: luuman
-  repo: luuman.github.io
+  owner: cniter
+  admin: ['cniter']
+  repo: cniter.github.io
   client_id: 
   client_secret: 
+  # 是否开启Gitalk评论，https://github.com/gitalk/gitalk/blob/master/readme-cn.md
+
+gitment:
+  # on: true
+  owner: cniter
+  repo: cniter.github.io
+  client_id: 
+  client_secret: 
+  # 是否开启gitment评论，https://imsun.net/posts/gitment-introduction/
 
 youyan:
-  #on: true
+  # on: true
   id: 
   # 是否开启友言评论，http://www.uyan.cc/index.php
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
@@ -84,25 +102,25 @@ youyan:
 background:
   on: true
   #on: false
-  background_sum: 24
-  background_image: 109
+  background_sum: 5
+  background_image: 1
 
 highlight_style:
   on: true
   inline_code: 5
-  code_block: 5
+  code_block: 0
   # Set inline_code to style highlight text
   # Chose a highlight theme for code block
   # 通过 inline_code 切换内置文本高亮样式 Value: 0 - 9 可选
   # 通过 code_block 切换内置代码高亮配色主题  Value: 0 - 4 
 
 blockquote_style:
-  #on: true
-  blockquote: 1  # Value: 0 - 7 可选
+  on: true
+  blockquote: 3  # Value: 0 - 7 可选
   # 自定义文章「引用部分」的样式
 
-# 左边栏宽度 px
-left_col_width: 300
+# 右侧栏宽度 px
+right_col_width: 300
 
 # 目录中标题不换行
 # Keep TOC title on the same line | 
@@ -110,11 +128,15 @@ toc_nowrap: false
 
 # 自定义"阅读全文"链接按钮的显示文字
 # Customize the text on excerpt link
-excerpt_link: 大航海 #修改more>>的文字
+# 在文章中想要截断的地方加上 <!-- more -->
+excerpt_link: 查看更多 #修改more>>的文字
 
-# 是否显示边栏中的搜索框（仅样式，未添加搜索功能）
-# Search Box in left column
-# search_box: true
+# 右侧栏搜索框
+# local search | 设置本地搜索 需安装hexo-generator-searchdb插件
+search:
+  on: true
+  path: search.xml
+  field: all
 
 # 是否开启主页及加载头像时的动画效果
 # Animation in Homepage and Loading avatar
@@ -130,30 +152,31 @@ tagcloud: true
 # Blogroll, Link exchange | 友情链接
 # friends: false
 friends:
-  name: http://luuman.github.io/
+  Shaun's Space: https://cniter.github.io
+
 
 # 打赏
 # 请在需要打赏的文章的md文件头部，设置属性reward: true
 
 # 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 1
 # 打赏wording
 reward_wording1: '纯属好玩'
 reward_wording2: '扫码打赏，你说多少就多少'
-# 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/img/alipay.jpg
+# 支付宝logo图片地址，跟你设置头像的方式一样。比如：/img/alipay.jpg
 alipay: /img/alipay.png
-# 微信二维码图片地址
+# 微信logo图片地址
 weixin: /img/weixin.png
 
 #是否开启“关于我”。
-aboutme: 纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中
+aboutme: 学以致用，学习使我快乐！<br />Do the Right Thing, Wait to get fired.
 #aboutme: false
 
 # 是否在新窗口打开链接
 # Open ALL link in a new tab
 open_in_new: false
 
-# Customize feed link 自定义订阅地址
+# Customize feed link 自定义订阅地址 需安装hexo-generator-feed插件
 rss: /atom.xml
 
 
@@ -165,7 +188,7 @@ fancybox: true
 
 # Display Math(LaTeX, MathML...) | 数学公式支持
 ## https://www.mathjax.org/
-mathjax: false
+mathjax: true
 
 # Socail Share | 是否开启分享
 # share: true
@@ -185,8 +208,11 @@ baidu_analytics:
 # http://ibruce.info/2015/04/04/busuanzi/
 visit_counter:
   on: true
-  site_visit: 海贼到访数
+  site_visit: 极客到访数
   page_visit: 本页阅读量
+
+# RevolverMaps统计并可视化访客信息 http://www.revolvermaps.com/
+visual_visitor: # <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=50om5cdo666&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=49" defer="defer"></script>
 
 # A标签提示
 TipTitle: true
